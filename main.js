@@ -71,3 +71,74 @@ $(document).ready(function(){
     }
   });
 });
+$(window).on('load resize', function() {
+	if ($(window).width() < 1200) {
+		var $nav = $('.greedy');
+		var $btn = $('.greedy button');
+		var $vlinks = $('.greedy .links');
+		var $hlinks = $('.greedy .dropdown_menu');
+
+		var numOfItems = 0;
+		var totalSpace = 0;
+		var breakWidths = [];
+
+		// Get initial state
+		$vlinks.children().outerWidth(function(i, w) {
+			totalSpace += w;
+			numOfItems += 1;
+			breakWidths.push(totalSpace);
+		});
+
+		var availableSpace, numOfVisibleItems, requiredSpace;
+
+		function check() {
+
+			// Get instant state
+			availableSpace = $vlinks.width() - 10;
+			numOfVisibleItems = $vlinks.children().length;
+			requiredSpace = breakWidths[numOfVisibleItems - 1];
+
+			// There is not enought space
+			if (requiredSpace > availableSpace) {
+				$vlinks.children().last().prependTo($hlinks);
+				numOfVisibleItems -= 1;
+				check();
+				// There is more than enough space
+			} else if (availableSpace > breakWidths[numOfVisibleItems]) {
+				$hlinks.children().first().appendTo($vlinks);
+				numOfVisibleItems += 1;
+			}
+			// Update the button accordingly
+			$btn.attr("count", numOfItems - numOfVisibleItems);
+			if (numOfVisibleItems === numOfItems) {
+				$btn.addClass('hidden');
+			} else $btn.removeClass('hidden');
+
+		}
+		// Window listeners
+		$(window).resize(function() {
+			check();
+		});
+
+		$btn.on('click', function() {
+			$hlinks.toggleClass('hidden');
+		});
+
+		check();
+		$( document ).ready(function() {
+			$('.bottom_header_content').addClass('initialized');
+		});
+	}
+	if ($(window).width() < 820) {
+		// мобильный слайдер новостей
+		$('.news_small').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			infinite: false,
+			centerMode: false,
+			focusOnSelect: true,
+			arrows: false,
+			dots: true
+		});
+	}
+});
