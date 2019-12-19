@@ -129,16 +129,5 @@ $(window).on('load resize', function() {
 			$('.bottom_header_content').addClass('initialized');
 		});
 	}
-	if ($(window).width() < 820) {
-		// мобильный слайдер новостей
-		$('.news_small').slick({
-			slidesToShow: 1,
-			slidesToScroll: 1,
-			infinite: false,
-			centerMode: false,
-			focusOnSelect: true,
-			arrows: false,
-			dots: true
-		});
-	}
+	
 });

@@ -177,7 +177,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="news_small">
+						<div class="news_small news_list_slider">
 
 							<!-- первый элемент скрыт для слайдера -->
 							<div class="news_content">
@@ -481,6 +481,22 @@
 		        });
 				myMap.geoObjects.add(myPlacemark);
 		}
+
+
+		$(window).on('load resize', function() {
+			if ($(window).width() < 820) {
+				// мобильный слайдер новостей
+				$('.news_list_slider').slick({
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					infinite: false,
+					centerMode: false,
+					focusOnSelect: true,
+					arrows: false,
+					dots: true
+				});
+			}
+		});
 		</script>
 	</div>
 </body>

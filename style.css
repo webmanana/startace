@@ -1103,6 +1103,74 @@ a:hover {
 	margin-bottom: 20px;
 	color: #01990D;
 }
+.news_list_bottom {
+	width: auto;
+	margin-left: -16px;
+	margin-right: -16px;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+}
+.news_bottom_inner {
+	width: 100%;
+}
+.page_news_list {
+	padding: 40px 20px;
+}
+.page_news_list .news_list {
+	margin: 0;
+}
+.news_bottom_inner .news_content {
+	width: 25%;
+}
+.page_list_nav {
+	padding-bottom: 50px;
+	padding-left: 16px;
+}
+.page_list_nav ul {
+	display: flex;
+	flex-direction: row;
+}
+.page_list_nav ul li {
+	padding-right: 20px;
+}
+.page_list_nav ul li a {
+	padding: 6px 0;
+	display: flex;
+	color: #000;
+}
+.page_list_nav ul li.active a {
+	border-bottom: 2px solid #01990D;
+	color: #01990D;
+	font-weight: bold;
+}
+.page_desc {
+	position: relative;
+}
+.page_contact_url {
+	position: absolute;
+	right: 0;
+	top: 15px;
+	padding: 10px 30px;
+	color: #01990D;
+	border-radius: 5px;
+	border: 1px solid #01990D;
+}
+.page_contact_url:hover {
+	color: #fff;
+	background: #01990D;
+}
+.page_contact {
+	padding-top: 20px;
+}
+.page_contact ul li {
+	display: flex;
+	flex-direction: row;
+	padding-bottom: 20px;
+}
+.page_contact ul li span {
+	padding-left: 10px;
+}
 .mobile_burger, .mobile_login, .calc_form_check input, .news_small .news_content:first-child, .bottom_header_content button, ul.hidden-links.hidden, .feedback_toggle {
 	display: none;
 }
@@ -1189,7 +1257,7 @@ a:hover {
 	.news_big {
     width: 60%;
 	}
-	.news_small {
+	.news_list_slider {
     width: 40%;
 	}
 	.news_big .news_img {
@@ -1204,7 +1272,13 @@ a:hover {
 	.feedback_toggle {
 		display: flex;
 	}
-	.news_small .news_content:last-child, .news_small .news_content:nth-last-child(2), .feedback_sidebar {
+	.page_news_list .news_small {
+		width: 100%;
+	}
+	.page_news_list .news_content {
+		width: 25%;
+	}
+	.news_list_slider .news_content:last-child, .news_list_slider .news_content:nth-last-child(2), .feedback_sidebar, .page_news_list .news_big {
 		display: none;
 	}
 }
@@ -1239,6 +1313,9 @@ a:hover {
 	}
 	.worker_desc {
 		padding: 10px;
+	}
+	.page_news_list .news_content {
+		width: 100%;
 	}
 	.calc_info {
 		display: none;
@@ -1289,25 +1366,25 @@ a:hover {
 	.news_small {
 		width: 100%;
 	}
-	.news_small.slick-initialized {
+	.news_list_slider.slick-initialized {
     visibility: visible;
     transition: visibility 0s linear 0s, opacity 300ms;
     opacity: 1;
 	}
-	.news_small {
+	.news_list_slider {
     visibility: hidden;
     height: 355px;
     transition: visibility 0s linear 300ms, opacity 300ms;
     opacity: 0;
 		max-width: 568px;
 	}
-	.news_small .slick-list {
+	.news_list_slider .slick-list {
     max-width: 100%;
     margin: 0 auto;
     width: 100%;
     overflow: visible;
 	}
-	.news_small .slick-track {
+	.news_list_slider .slick-track {
     margin: 0 -10px;
 	}
 	.news_list {
@@ -1317,7 +1394,7 @@ a:hover {
     padding-left: 0;
     padding-right: 0;
 	}
-	.news_small .slick-slide {
+	.news_list_slider .slick-slide {
 		padding: 0 10px;
 	}
 	.news_img {
@@ -1345,7 +1422,7 @@ a:hover {
 		padding-top: 30px;
 		padding-bottom: 40px;
 	}
-	.news_content:first-child, .news_small .news_content:last-child, .news_small .news_content:nth-last-child(2) {
+	.news_content:first-child, .news_list_slider .news_content:last-child, .news_list_slider .news_content:nth-last-child(2) {
 		display: block!important;
 	}
 	.feedback_page {
@@ -1357,6 +1434,16 @@ a:hover {
 	.calc_form {
 		padding: 20px;
 	}
+	.page_list_nav {
+		padding-left: 0;
+		padding-bottom: 20px;
+	}
+	.page_contact_url {
+    bottom: -100px;
+    top: auto;
+    width: 100%;
+    text-align: center;
+}
 	.bottom_header_inner, .header_contact, .header_line, .header_login, .about_img, .news_big, .page_sidebar {
 		display: none;
 	}
@@ -1468,6 +1555,12 @@ a:hover {
 		padding-top: 20px;
 		padding-bottom: 0;
 	}
+	.page_contact ul li span {
+		font-size: 10px;
+	}
+	.map_contact {
+		padding-top: 20px;
+	}
 	.slide_container {
 		position: relative;
 	}
@@ -1486,6 +1579,9 @@ a:hover {
 	}
 	.page_content_inner {
 		padding-top: 0;
+	}
+	.page_news_list {
+		padding-top: 20px;
 	}
 	.worker_inner {
 		padding-top: 0;
