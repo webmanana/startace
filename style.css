@@ -1171,6 +1171,92 @@ a:hover {
 .page_contact ul li span {
 	padding-left: 10px;
 }
+.account_block {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.account_left {
+	width: 105px;
+}
+.account_center {
+	flex: 1;
+	padding-left: 30px;
+}
+.account_url {
+	font-size: 14px;
+	text-decoration-line: underline;
+	color: #01990D;
+}
+.account_name_img img {
+	border-radius: 50%:
+}
+.account_name_desc {
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
+}
+.account_name_desc span {
+	font-weight: bold;
+}
+.account_name {
+	padding-bottom: 30px;
+}
+.account_left ul li {
+	font-size: 14px;
+	color: #828282;
+	margin-bottom: 10px;
+}
+.account_center ul li {
+	margin-bottom: 10px;
+	font-weight: bold;
+	font-size: 14px;
+	color: #515151;
+}
+.account_city {
+	padding-top: 20px;
+	padding-bottom: 10px;
+	border-top: 1px solid #E8E8E8;
+	border-bottom: 1px solid #E8E8E8;
+}
+.account_info {
+	padding-bottom: 10px;
+}
+.account_password {
+	padding-top: 20px;
+}
+.account_center ul li input[type=password] {
+	font-size: 14px;
+	color: #828282;
+	padding: 6px 20px;
+	text-align: center;
+	background: #F4F4F4;
+	border-radius: 5px;
+	border: none;
+	width: 240px;
+}
+.account_center ul li input[type=submit] {
+	font-size: 14px;
+	text-align: center;
+	color: #FFFFFF;
+	padding: 6px 20px;
+	text-align: center;
+	background: #01990D;
+	border-radius: 5px;
+	border: none;
+	width: 240px;
+	cursor: pointer;
+}
+.header_login_url {
+	border: none!important;
+	padding: 0 0 0 8px!important;
+	font-weight: bold;
+}
+.header_login_online {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
 .mobile_burger, .mobile_login, .calc_form_check input, .news_small .news_content:first-child, .bottom_header_content button, ul.hidden-links.hidden, .feedback_toggle {
 	display: none;
 }
@@ -1551,6 +1637,10 @@ a:hover {
 	.container {
 		max-width: 100%;
 	}
+	.account_url {
+    width: 100%;
+    text-align: right;
+	}
 	.page_img {
 		padding-top: 20px;
 		padding-bottom: 0;
@@ -1558,11 +1648,27 @@ a:hover {
 	.page_contact ul li span {
 		font-size: 10px;
 	}
+	.account_center {
+		padding-left: 15px;
+	}
 	.map_contact {
 		padding-top: 20px;
 	}
+	.account_name {
+		padding-top: 20px;
+	}
+	.account_name_img {
+		width: 60px;
+		height: 60px;
+	}
+	.account_password .account_center {
+		padding-left: 0;
+	}
 	.slide_container {
 		position: relative;
+	}
+	.account_name_desc {
+		padding-left: 10px;
 	}
 	.page_desc h2 {
 		font-size: 16px;
