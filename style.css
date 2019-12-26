@@ -1257,6 +1257,132 @@ a:hover {
 	flex-direction: row;
 	align-items: center;
 }
+.page_content_inner h1 {
+	margin-top: 0;
+	margin-bottom: 20px;
+	font-weight: normal;
+	font-size: 30px;
+	color: #01990D;
+}
+.page_content_inner h4 {
+  font-weight: bold;
+  font-size: 14px;
+  color: #01990D;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #01990D;
+  display: flex;
+  width: 121px;
+}
+.dogovor_inner {
+	padding: 20px 0;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+.dogovor_padding {
+	padding-bottom: 0;
+}
+.dogovor_balance {
+	width: 100%;
+	padding: 20px;
+	background: #F1F1F1;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.dogovor_title {
+	font-weight: bold;
+	font-size: 14px;
+	color: #01990D;
+}
+.dogovor_balance_left {
+	display: flex;
+	flex-direction: column;
+}
+.dogovor_balance_price {
+	font-weight: bold;
+	font-size: 40px;
+	padding-top: 10px;
+	padding-bottom: 26px;
+	color: #01990D;
+}
+.dogovor_balance_block_text {
+	display: flex;
+	flex-direction: column;
+}
+.dogovor_balance_block_text span {
+	font-size: 12px;
+	color: #828282;
+}
+.dogovor_balance_right_top span {
+	font-size: 14px;
+	color: #828282;
+	padding-left: 10px;
+}
+.dogovor_balance_right {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.dogovor_balance_block_bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.dogovor_balance_block_bottom span {
+	font-size: 14px;
+	color: #01990D;
+	width: 130px;
+	padding-left: 10px;
+}
+.dogovor_summ_block {
+	padding: 20px 8px;
+    width: calc(100% / 3);
+}
+.dogovor_summ_inner {
+	margin-left: -8px;
+	margin-right: -8px;
+	display: flex;
+	flex-direction: row;
+}
+.dogovor_summ {
+	padding: 20px;
+	background: #F1F1F1;
+	border-radius: 10px;
+}
+.dogovor_summ_bottom {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding-top: 40px;
+}
+.dogovor_price {
+	font-weight: bold;
+	font-size: 20px;
+	text-align: right;
+	color: #01990D;
+}
+.dogovor_all {
+  display: flex;
+  flex-direction: row;
+  text-align: right;
+  align-items: center;
+  justify-content: flex-end;
+}
+.dogovor_all_text {
+	font-size: 20px;
+	color: #828282;
+}
+.dogovor_all_price {
+	font-weight: bold;
+	font-size: 30px;
+	text-align: right;
+	color: #01990D;
+	padding-left: 20px;
+}
 .mobile_burger, .mobile_login, .calc_form_check input, .news_small .news_content:first-child, .bottom_header_content button, ul.hidden-links.hidden, .feedback_toggle {
 	display: none;
 }
