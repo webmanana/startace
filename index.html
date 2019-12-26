@@ -111,9 +111,11 @@
 								<input type="text" name="" value="" placeholder="Стартовая сумма..">
 							</div>
 							<div class="calc_form_date">
-								<span>срок</span>
-								<div id="slider_amirol"></div>
-								<span>1 год</span>
+								<span class="calc_form_left">Срок</span>
+								<div class="calc_content">
+									<div id="slider_amirol"></div>
+								</div>
+								<span class="calc_form_right">1 год</span>
 							</div>
 							<div class="calc_form_check">
 								<input type="checkbox" id="calc_check" name="" value="" checked>
@@ -123,7 +125,7 @@
 							<div class="calc_form_result">
 								<span>Ваш заработок</span>
 								<div class="calc_form_result_text">
-									<h4 id="calc_total">1000</h4>₽
+									<input type="text" name="totalprice" value="1000" id="total"> ₽
 								</div>
 							</div>
 						</div>
@@ -357,6 +359,7 @@
 		<script src="vendor/foundation/js/vendor/what-input.js"></script>
 		<script src="vendor/foundation/js/vendor/foundation.js"></script>
 		<script src="vendor/foundation/js/app.js"></script>
+		<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="vendor/slick/slick.min.js"></script>
 		<script src="main.js"></script>
 		<script type="text/javascript">
@@ -416,7 +419,6 @@
 		    10: "11",
 		    11: "12",
 		}
-
 		$(document).ready(function() {
 		    $("#total").val("10000");
 
@@ -425,7 +427,7 @@
 		        animate: true,
 
 		        min: 0,
-		        max: 12,
+		        max: 11,
 		        step: 1,
 		        slide:
 		            function(event, ui)
@@ -442,28 +444,24 @@
 
 
 		function update(slider,val) {
+	    if(undefined === val) val = 0;
+	    var amount = p[val];
 
-		    if(undefined === val) val = 0;
-		    var amount = p[val];
+	    $('#sliderVal').val(val);
 
-		    $('#sliderVal').val(val);
-
-		    $('#slider_amirol a').html('<label>'+amount+'</label>');
+	    $('#slider_amirol a').html('<label>'+amount+'</label>');
 		}
 
 		function calcualtePrice(val){
+	    if(undefined === val)
+	        val = $('#sliderVal').val();
 
-		    if(undefined === val)
-		        val = $('#sliderVal').val();
+	    var month = $('#month').val();
+	    var term = [$('#term').val()];
 
-		    var month = $('#month').val();
-		    var term = [$('#term').val()];
+	    var totalPrice = t[val]*term;
 
-		    var totalPrice = t[val]*term;
-
-		    $("#total").val(totalPrice.toFixed(2));
-		    $("#total12").val(Math.round((totalPrice)/12).toFixed(2));
-		    $("#total52").val(Math.round((totalPrice)/52).toFixed(2));
+	    $("#total").val(totalPrice.toFixed(0));
 		}
 
 		ymaps.ready(init);
