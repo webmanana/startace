@@ -1529,7 +1529,7 @@ background: #3276b1;
 .dogovor_balance_right {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: flex-end;
 }
 .dogovor_balance_block_bottom {
   display: flex;
@@ -1545,7 +1545,7 @@ background: #3276b1;
 }
 .dogovor_summ_block {
 	padding: 20px 8px;
-    width: calc(100% / 3);
+    width: 50%;
 }
 .dogovor_summ_inner {
 	margin-left: -8px;
@@ -1553,10 +1553,21 @@ background: #3276b1;
 	display: flex;
 	flex-direction: row;
 }
+.dogovor_title_inner {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.dogovor_title_right {
+	font-size: 12px;
+	text-align: right;
+	color: #828282;
+}
 .dogovor_summ {
 	padding: 20px;
 	background: #F1F1F1;
 	border-radius: 10px;
+	min-height: 162px;
 }
 .dogovor_summ_bottom {
 	display: flex;
@@ -1748,32 +1759,6 @@ background: #3276b1;
 	.page_news_list .news_content {
 		width: 100%;
 	}
-	.dogovor_balance, .dogovor_summ {
-		background: transparent;
-		padding: 0;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-	}
-	.page_content_inner h4 {
-		border: none;
-		font-weight: bold;
-		font-size: 16px;
-		width: auto;
-		color: #01990D;
-	}
-	.dogovor_title {
-		font-weight: normal;
-		font-size: 14px;
-		color: #828282;
-	}
-	.dogovor_price {
-		color: #828282;
-	}
-	.dogovor_summ_bottom {
-		padding: 0;
-	}
 	.dogovor_summ_inner {
 		display: flex;
 		flex-direction: column;
@@ -1793,25 +1778,8 @@ background: #3276b1;
 		font-size: 20px;
 		color: #01990D;
 	}
-	.dogovor_content {
-		padding: 30px 30px 60px 30px;
-		background-image: url(img/dogovor_background.jpg);
-		background-repeat: no-repeat;
-		background-position: right top;
-		background-color: #F1F1F1;
-		position: relative;
-		margin-bottom: 20px;
-	}
-	.dogovor_inner {
-		padding: 0 0 20px 0;
-	}
-	.dogovor_1, .dogovor_3 {
+	.dogovor_1, .dogovor_3, .dogovor_2 {
 		padding-top: 20px;
-	}
-	.dogovor_balance_right_top {
-		position: absolute;
-    bottom: 36px;
-    left: 20px;
 	}
 	.dogovor_url_desc span {
 		font-size: 12px;
@@ -1833,7 +1801,7 @@ background: #3276b1;
     font-size: 10px;
     color: #828282;
 	}
-	.calc_info, .dogovor_balance_block_bottom, .dogovor_balance_left .dogovor_title, .dogovor_balance_price, .dogovor_summ_bottom_img, .dogovor_2 {
+	.calc_info {
 		display: none;
 	}
 }
@@ -1980,12 +1948,19 @@ background: #3276b1;
     border-radius: 0;
 		padding: 20px 0;
 	}
+	.dogovor_balance {
+		flex-direction: column;
+	}
 	.worker_inner {
 		height: 400px;
 		visibility: hidden;
     transition: visibility 0s linear 300ms, opacity 300ms;
     opacity: 0;
     max-width: 568px;
+	}
+	.dogovor_balance_block_bottom {
+		justify-content: flex-start;
+		padding-top: 10px;
 	}
 	.worker_inner .slick-list {
     max-width: 100%;
@@ -2075,7 +2050,8 @@ background: #3276b1;
     text-align: right;
 	}
 	.dogovor_content {
-		margin-top: 20px;
+		margin-top: 0;
+		padding-top: 15px;
 	}
 	.page_img {
 		padding-top: 20px;
@@ -2089,9 +2065,6 @@ background: #3276b1;
 	}
 	.dogovor_all_text {
 		font-size: 14px;
-	}
-	.dogovor_content {
-		padding: 20px 20px 40px 20px;
 	}
 	.page_contact ul li span {
 		font-size: 10px;
