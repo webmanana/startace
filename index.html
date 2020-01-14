@@ -416,9 +416,11 @@
 		        slide:
 		            function(event, ui)
 		            {
-	                calcualtePrice(event, ui);
+									update(1,ui.value); //changed
+	                calcualtePrice(ui.value);
 		            }
 		    });
+		    update();
 				$("#term").change(function() {
           calcualtePrice();
         });
@@ -431,16 +433,15 @@
 	    $('#slider_amirol a').html('<label>'+amount+'</label>');
 		}
 
-		function calcualtePrice(){
+		function calcualtePrice(val){
 			let procent = 0.1;
 			let term = +$('#term').val();
 			let summ = 0;
-			for (i = 0; i < 12; i++) {
+			for (var i = 0; i < val; i++) {
 				term = term * procent + term;
 				summ = term + summ;
 			}
-
-			$("#total").val(summ);
+			$("#total").val(summ.toFixed(0));
 		}
 		//карта
 		ymaps.ready(init);
