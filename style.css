@@ -277,7 +277,7 @@ a:hover {
 	text-align: center;
 	outline: none;
 	border-radius: 10px;
-	color: #999;
+	color: #000;
 }
 .slider_content {
 	visibility: hidden;
@@ -301,7 +301,7 @@ a:hover {
 .calc_form_result_text input {
 	background: transparent;
 	border: none;
-	width: 200px;
+	width: 250px;
 	outline: none;
 }
 .calc_form_result span {
@@ -390,14 +390,17 @@ a:hover {
 .calc_form_check {
 	display: flex;
 	flex-direction: row;
+	position: relative;
 }
 .calc_form_check input:checked ~ .calc_form_check_input::after{
 	background: #01990D;
 }
 .calc_form_check label {
-	padding-left: 17px;
-	font-size: 16px;
-	color: #000000;
+  padding-left: 40px;
+  font-size: 16px;
+  color: #000000;
+  position: relative;
+  left: -25px;
 }
 .news {
 	padding-top: 80px;
