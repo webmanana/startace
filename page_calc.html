@@ -76,12 +76,14 @@
 							<div class="calc_inner calc_black">
 								<div class="calc_form">
 									<div class="calc_form_input">
-										<input type="text" name="" value="" placeholder="Стартовая сумма..">
+										<input type="text" id="term" name="" value="" placeholder="Стартовая сумма..">
 									</div>
 									<div class="calc_form_date">
-										<span>срок</span>
-										<div id="slider_amirol"></div>
-										<span>1 год</span>
+										<span class="calc_form_left">Срок</span>
+										<div class="calc_content">
+											<div id="slider_amirol"></div>
+										</div>
+										<span class="calc_form_right">1 год</span>
 									</div>
 									<div class="calc_form_check">
 										<input type="checkbox" id="calc_check" name="" value="" checked>
@@ -89,9 +91,9 @@
 										<label for="calc_check">С ежемесячной докапитализацией</label>
 									</div>
 									<div class="calc_form_result">
-										<span>Ваш заработок</span>
+										<span>Ваш баланс</span>
 										<div class="calc_form_result_text">
-											<h4 id="calc_total">1000</h4>₽
+											<input type="text" name="totalprice" value="0" id="total"> ₽
 										</div>
 									</div>
 								</div>
@@ -202,11 +204,77 @@
 		<script src="vendor/foundation/js/vendor/what-input.js"></script>
 		<script src="vendor/foundation/js/vendor/foundation.js"></script>
 		<script src="vendor/foundation/js/app.js"></script>
-		<script src="vendor/fancybox/jquery.fancybox.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="vendor/slick/slick.min.js"></script>
 		<script src="main.js"></script>
 		<script type="text/javascript">
+		// калькулятор
+		var p = {
+		    1: "1 мес",
+		    2: "2 мес",
+		    3: "3 мес",
+		    4: "4 мес",
+		    5: "5 мес",
+		    6: "6 мес",
+		    7: "7 мес",
+		    8: "8 мес",
+		    9: "9 мес",
+		    10: "10 мес",
+		    11: "11 мес",
+		    12: "12 мес",
+		};
 
+		$(document).ready(function() {
+		    $("#total").val("0");
+
+		    $("#slider_amirol").slider({
+		        range: "min",
+		        animate: true,
+		        min: 1,
+		        max: 12,
+		        step: 1,
+		        slide:
+		            function(event, ui)
+		            {
+									$("#saveValue").text(ui.value);
+									update(1,ui.value); //changed
+	                calcualtePrice(ui.value);
+		            }
+		    });
+		    update();
+				$( "#term" ).on( "change", function() {
+				  calcualtePrice();
+				});
+				$( "#calc_check" ).on( "change", function() {
+				  calcualtePrice();
+				});
+				$( "#calc_check" ).on( "click", function() {
+				  calcualtePrice();
+				});
+		});
+
+		function update(slider,val) {
+	    if(undefined === val) val = 1;
+	    var amount = p[val];
+			$('#sliderVal').val(val);
+	    $('#slider_amirol a').html('<label>'+amount+'</label>');
+		}
+
+		function calcualtePrice(val){
+			if(undefined === val) val = 1;
+			val = $("#saveValue").text();
+			console.log(val);
+			var procent = 0.1;
+			var term = +$('#term').val();
+			if($('#calc_check').prop("checked") != true){
+				term = term * (1 + procent*val);
+      } else {
+				for (i = 0; i < val; i++) {
+					term = term * (1 + procent);
+				}
+			}
+			$("#total").val(term.toFixed(0));
+		}
 		</script>
 	</div>
 </body>

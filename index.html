@@ -110,6 +110,9 @@
 							<div class="calc_form_input">
 								<input type="text" id="term" name="" value="" placeholder="Стартовая сумма..">
 							</div>
+							<div class="hide saveValue">
+								<input type="text" id="saveValue" name="" value="">
+							</div>
 							<div class="calc_form_date">
 								<span class="calc_form_left">Срок</span>
 								<div class="calc_content">
@@ -123,7 +126,7 @@
 								<label for="calc_check">С ежемесячной докапитализацией</label>
 							</div>
 							<div class="calc_form_result">
-								<span>Ваш заработок</span>
+								<span>Ваш баланс</span>
 								<div class="calc_form_result_text">
 									<input type="text" name="totalprice" value="0" id="total"> ₽
 								</div>
@@ -416,14 +419,21 @@
 		        slide:
 		            function(event, ui)
 		            {
+									$("#saveValue").text(ui.value);
 									update(1,ui.value); //changed
 	                calcualtePrice(ui.value);
 		            }
 		    });
 		    update();
-				$("#term").change(function() {
-          calcualtePrice();
-        });
+				$( "#term" ).on( "change", function() {
+				  calcualtePrice();
+				});
+				$( "#calc_check" ).on( "change", function() {
+				  calcualtePrice();
+				});
+				$( "#calc_check" ).on( "click", function() {
+				  calcualtePrice();
+				});
 		});
 
 		function update(slider,val) {
@@ -434,14 +444,19 @@
 		}
 
 		function calcualtePrice(val){
-			let procent = 0.1;
-			let term = +$('#term').val();
-			let summ = 0;
-			for (var i = 0; i < val; i++) {
-				term = term * procent + term;
-				summ = term + summ;
+			if(undefined === val) val = 1;
+			val = $("#saveValue").text();
+			console.log(val);
+			var procent = 0.1;
+			var term = +$('#term').val();
+			if($('#calc_check').prop("checked") != true){
+				term = term * (1 + procent*val);
+      } else {
+				for (i = 0; i < val; i++) {
+					term = term * (1 + procent);
+				}
 			}
-			$("#total").val(summ.toFixed(0));
+			$("#total").val(term.toFixed(0));
 		}
 		//карта
 		ymaps.ready(init);

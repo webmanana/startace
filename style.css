@@ -304,6 +304,12 @@ a:hover {
 	width: 250px;
 	outline: none;
 }
+.hide {
+	display: none;
+}
+.calc_black .calc_form_result_text input {
+	color: #fff;
+}
 .calc_form_result span {
 	font-size: 20px;
 	color: #000000;
