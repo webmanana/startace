@@ -1433,13 +1433,17 @@ img.payment {
 .account_name_desc {
 	display: flex;
 	align-items: center;
-	padding-left: 20px;
 }
 .account_name_desc span {
 	font-weight: bold;
+	font-size: 20px;
+	color: #515151;
 }
 .account_name {
 	padding-bottom: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 .account_left ul li {
 	font-size: 14px;
@@ -1464,7 +1468,7 @@ img.payment {
 .account_password {
 	padding-top: 20px;
 }
-.account_center ul li input[type=password] {
+.account_center ul li input[type=password], .account_center ul li input[type=text] {
 	font-size: 14px;
 	color: #828282;
 	padding: 6px 20px;
@@ -2086,7 +2090,6 @@ img.payment {
 	}
 	.account_url {
     width: 100%;
-    text-align: right;
 	}
 	.dogovor_content {
 		margin-top: 0;
@@ -2133,9 +2136,6 @@ img.payment {
 	.slide_container {
 		position: relative;
 	}
-	.account_name_desc {
-		padding-left: 10px;
-	}
 	.page_desc h2 {
 		font-size: 16px;
 	}
@@ -2161,6 +2161,12 @@ img.payment {
 	}
 	.worker_inner .slick-dots {
     right: 45%;
+	}
+	.account_center ul li input[type=password], .account_center ul li input[type=text] {
+		width: 100%;
+	}
+	.account_center ul li input[type=submit] {
+		width: 100%;
 	}
 	.title h1 {
 		font-size: 16px;
@@ -2307,5 +2313,14 @@ img.payment {
 	}
 	.feedback_toggle {
 		bottom: 20px;
+	}
+	.account_block__text {
+		display: none;
+	}
+	.account_block {
+		flex-direction: column;
+	}
+	.account_name_desc span {
+		font-size: 14px;
 	}
 }
