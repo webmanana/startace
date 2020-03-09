@@ -1552,9 +1552,10 @@ img.payment {
 .dogovor_balance_price {
 	font-weight: bold;
 	font-size: 40px;
-	padding-top: 10px;
+	padding-top: 26px;
 	padding-bottom: 26px;
 	color: #01990D;
+	display: flex;
 }
 .dogovor_balance_block_text {
 	display: flex;
@@ -1617,7 +1618,7 @@ img.payment {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: flex-end;
-	padding-top: 40px;
+	padding-top: 20px;
 }
 .dogovor_price {
 	font-weight: bold;
